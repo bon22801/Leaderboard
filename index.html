@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app = "leaderboardApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/players.js"></script>
+  </head>
+  <body ng-controller="playersController">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Summoner Name</th>
+          <th>Points</th>
+          <th>Champions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr ng-repeat="player in players">
+          <td>{{$index+1}}</td>
+          <td>{{player.summonerName}}</td>
+          <td>{{player.points}}</td>
+          <td><img ng-src="{{player.img}}" /></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+
+  </html>
