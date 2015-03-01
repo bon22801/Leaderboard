@@ -15,16 +15,18 @@
           <th>Rank</th>
           <th>Summoner Name</th>
           <th>Points</th>
-          <th>Champions</th>
+          <th>Wins</th>
+          <th>Losses</th>
         </tr>
       </thead>
 
       <tbody>
-        <tr ng-repeat="player in players">
+        <tr ng-repeat="player in players | orderBy:orderProp">
           <td>{{$index+1}}</td>
-          <td>{{player.summonerName}}</td>
-          <td>{{player.points}}</td>
-          <td><img ng-src="{{player.imgURL}}" /></td>
+          <td>{{player.playerOrTeamName}}</td>
+          <td>{{player.leaguePoints}}</td>
+          <td>{{player.wins}}</td>
+          <td>{{player.losses}}</td>
         </tr>
       </tbody>
     </table>
