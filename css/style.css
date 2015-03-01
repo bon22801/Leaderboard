@@ -1,4 +1,11 @@
-img {
-    height: 60px;
-    width: 60px;
+td {
+	font-size: 18px;
+}
+
+#wins {
+	color: green;
+}
+
+#losses {
+	color: red;
 }
