@@ -1,11 +1,21 @@
+.head{
+  text-align: center;
+}
+
+.head input {
+  display: block;
+  font-size: 20px;
+  width: 300px;
+}
+
 td {
-	font-size: 18px;
+  font-size: 18px;
 }
 
 #wins {
-	color: green;
+  color: green;
 }
 
 #losses {
-	color: red;
+  color: red;
 }
