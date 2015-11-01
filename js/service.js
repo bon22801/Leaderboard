@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('leaderboardApp', [])
+		.module('leaderboardApp')
 		.factory("playerService", function ($http){
 			return {
 				getPlayerData: function(callback) {
@@ -11,11 +11,5 @@
 				}
 			}
 		})
-	
-		.controller("playerCtrl", function ($scope, playerService){
-			playerService.getPlayerData(function(data) {
-				$scope.players = data.entries;
-				$scope.orderProp = '-leaguePoints';
-			});
-		})	
+
 })();
