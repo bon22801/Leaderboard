@@ -1,15 +1,6 @@
-.head{
-  text-align: center;
-  margin: 30px;
+input {
+  font-size: 18px;
 }
-
-.head input {
-	margin: 0px auto;
-  display: block;
-  font-size: 20px;
-  width: 400px;
-}
-
 
 td {
   font-size: 18px;
