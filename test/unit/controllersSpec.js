@@ -15,9 +15,6 @@ describe('Player controllers', function() {
     it('should set the default value of orderProp model', function() {
       expect($scope.orderProp).toBe('-leaguePoints');
     });
-		
-		it("contains spec with an expectation", function() {
-    expect(true).toBe(true);
-  });
+	
   });
 });
