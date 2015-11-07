@@ -3,17 +3,21 @@
 describe('Player controllers', function() {
 
   describe('PlayerCtrl', function(){
-    beforeEach(module('leaderboardApp'));
-    var $scope, $ctrl;
+    var scope, ctrl, $httpBackend;
 
-		
-    beforeEach(inject(function($controller) {
-      $scope = {};
-      $ctrl = $controller('PlayerCtrl', {$scope: $scope});
+    beforeEach(module('leaderboardApp'));	
+
+    beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
+      $httpBackend = _$httpBackend_;
+			$httpBackend.expectGET('json/league.json')
+				.respond([{playerOrTeamName: 'Dyrus'}, {playerOrTeamName: 'Pobelter'}]);
+
+      scope = $rootScope.$new();
+      ctrl = $controller('PlayerCtrl', {$scope: scope});
     }));
 
     it('should set the default value of orderProp model', function() {
-      expect($scope.orderProp).toBe('-leaguePoints');
+      expect(scope.orderProp).toBe('-leaguePoints');
     });
 	
   });
