@@ -13,3 +13,8 @@ td {
 #losses {
   color: red;
 }
+
+.table-wraper {
+    height: 600px;
+    overflow: auto;
+}
