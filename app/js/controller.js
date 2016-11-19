@@ -1,13 +1,13 @@
-(function() {
-	'use strict';
+(function () {
+    'use strict';
 
-	angular
+    angular
 		.module('leaderboardApp', [])
-		.controller("PlayerCtrl", function ($scope, playerService){
-			playerService.getPlayerData(function(data) {
-				$scope.players = data.entries;
-			});
-			$scope.orderProp = '-leaguePoints';
-		})	
+		.controller("PlayerCtrl", function ($scope, playerService) {
+		    playerService.getPlayerData(function (data) {
+		        $scope.players = data.entries;
+		    });
+		    $scope.orderProp = '-leaguePoints';
+		})
 })();
 
