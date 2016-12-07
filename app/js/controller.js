@@ -3,10 +3,15 @@
 
     angular
 		.module('leaderboardApp', [])
-		.controller("PlayerCtrl", function ($scope, playerService) {
-		    playerService.getPlayerData(function (data) {
-		        $scope.players = data.entries;
+		.controller("PlayerCtrl", function ($scope, playerService, championService) {
+		    playerService.getPlayers(function (players) {
+		        $scope.players = players.entries;
 		    });
+
+		    championService.getChampionImages(function (data) {
+		        console.log(data);
+		    });
+
 		    $scope.orderProp = '-leaguePoints';
 		})
 })();
