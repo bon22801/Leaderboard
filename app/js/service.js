@@ -17,7 +17,7 @@
     .factory("championService", function ($http) {
    			return {
     	        getChampionImages: function (callback) {
-    	            $http.get('http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json').success(callback);
+    	            $http.get('https://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json').success(callback);
     	        }
     	    }
     	})
