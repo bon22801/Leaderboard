@@ -3,11 +3,10 @@
 
     angular
 		.module('leaderboardApp').controller("TabCtrl", function () {
-				this.tab = 1;
-			
+				this.currentTab = 1;
 				
 		    this.setTab = (tabNumber) => {
-					this.tab = tabNumber;
+					this.currentTab = tabNumber;
 				};
 				
 		})

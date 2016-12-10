@@ -14,10 +14,10 @@
 		    }
 		})
 
-    	.factory("championService", function ($http) {
-    	    return {
+    .factory("championService", function ($http) {
+   			return {
     	        getChampionImages: function (callback) {
-    	            $http.get('https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?champData=image&api_key=' + key).success(callback);
+    	            $http.get('http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json').success(callback);
     	        }
     	    }
     	})

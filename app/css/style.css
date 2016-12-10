@@ -18,3 +18,7 @@ td {
     height: 600px;
     overflow: auto;
 }
+
+.champion-icon {
+    display: inline-block;
+}
