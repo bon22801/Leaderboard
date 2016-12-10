@@ -17,7 +17,7 @@
     .factory("championService", function ($http) {
    			return {
     	        getChampionImages: function (callback) {
-    	            $http.get('https://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json').success(callback);
+    	            $http.get('https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?champData=image&api_key=84c3d590-07e1-4ed6-bf20-94931e215bd1').success(callback);
     	        }
     	    }
     	})
