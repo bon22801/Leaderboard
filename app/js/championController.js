@@ -8,10 +8,12 @@
 		        this.champions = data;
         });
         
-        this.selectChampion = (id) => {
-            console.log(id);
+        this.selectChampion = (key) => {
+            championService.getChampionImages(key, (data) => {
+                console.log(data);
+            });
         }
-				
+        
 		}])
 })();
 
