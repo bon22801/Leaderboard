@@ -57,7 +57,7 @@
 		<div ng-controller="ChampionCtrl as champCtrl" ng-show="tab.currentTab == 2">
         <div class="container"> 
             <div class="champion-icon" ng-repeat="champion in champCtrl.champions.data">
-                <a a href="#" ng-click="champCtrl.selectChampion(champion.key)">
+                <a a href="#" ng-click="champCtrl.selectChampion(champion.id)">
                                     <img class="half-size-icon" ng-src="https://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/{{champion.key}}.png" alt="champion" />
                 </a>
             </div>
