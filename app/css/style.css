@@ -35,3 +35,19 @@ td {
     width:60px;
     height:60px;
 }
+
+#championName {
+    font-size: 30px;
+    color: darkblue;
+}
+
+#championTitle {
+    font-size: 18px;
+    color: skyblue;
+}
+
+#championSplash {
+    float: left;
+    width: 165px;
+    height: 300px;
+}

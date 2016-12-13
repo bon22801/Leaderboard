@@ -55,11 +55,25 @@
     </div>
 
 		<div ng-controller="ChampionCtrl as champCtrl" ng-show="tab.currentTab == 2">
-        <div class="container"> 
+        <div class="container" ng-hide="champCtrl.champSelected"> 
             <div class="champion-icon" ng-repeat="champion in champCtrl.champions.data">
                 <a a href="#" ng-click="champCtrl.selectChampion(champion.id)">
-                                    <img class="half-size-icon" ng-src="https://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/{{champion.key}}.png" alt="champion" />
+                    <img class="half-size-icon" ng-src="https://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/{{champion.key}}.png" alt="championIcon" />
                 </a>
+            </div>
+        </div>
+        <div class="container" ng-show="champCtrl.champSelected"> 
+            <div class="row">
+                <div class="col-md-3">
+                    <img id="championSplash" ng-src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{champCtrl.selectedChampion.name}}_0.jpg" alt="championSplash" />
+                </div>
+                <div class="col-md-9">
+                    <span id="championName">{{champCtrl.selectedChampion.name}}</span>
+                    <span id="championTitle"> - {{champCtrl.selectedChampion.title}}</span>
+                    <div id="champion-tags" ng-repeat="tag in champCtrl.selectedChampion.tags">
+                        <span class="tag tag-primary">{{tag}}</span>
+                    </div>
+                </div>
             </div>
         </div>
 		</div>
