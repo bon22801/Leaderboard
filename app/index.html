@@ -63,6 +63,7 @@
             </div>
         </div>
         <div class="container" ng-show="champCtrl.champSelected"> 
+            <button type="button" ng-click="champCtrl.unselectChampion()" class="btn btn-primary">back</button>
             <div class="row">
                 <div class="col-md-3">
                     <img id="championSplash" ng-src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{champCtrl.selectedChampion.name}}_0.jpg" alt="championSplash" />

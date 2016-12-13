@@ -17,6 +17,11 @@
             });
             this.champSelected = true;
         }
+        
+        this.unselectChampion = () => {
+            this.champSelected = false;
+            this.selectedChampion = [];
+        }
 		}])
 })();
 
