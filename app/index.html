@@ -2,7 +2,6 @@
 <html ng-app="leaderboardApp">
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
     <link href="css/style.css" rel="stylesheet">
 </head>
 
@@ -67,18 +66,26 @@
                 </a>
             </div>
         </div>
+        
         <div class="container" ng-show="champCtrl.champSelected"> 
-            <button type="button" ng-click="champCtrl.unselectChampion()" class="btn btn-primary">back</button>
+            <div class="row" style="margin-bottom: 30px">
+                <button type="button" ng-click="champCtrl.unselectChampion()" class="btn btn-primary">back</button>
+            </div>
             <div class="row">
-                <div class="col-md-3">
-                    <img id="championSplash" ng-src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{champCtrl.selectedChampion.name}}_0.jpg" alt="championSplash" />
-                </div>
-                <div class="col-md-9">
+                <div id="champion-info">
+                    <img id="champion-avatar" ng-src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{champCtrl.selectedChampion.name}}_0.jpg" alt="championSplash" />
                     <span id="championName">{{champCtrl.selectedChampion.name}}</span>
                     <span id="championTitle"> - {{champCtrl.selectedChampion.title}}</span>
                     <div id="champion-tags" ng-repeat="tag in champCtrl.selectedChampion.tags">
                         <span class="tag tag-primary">{{tag}}</span>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <h1> Skins </h1>
+                <div id="skins" class="col-md-2" ng-repeat="skin in champCtrl.selectedChampion.skins">
+                    <img id="championSplash" ng-src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{champCtrl.selectedChampion.name}}_{{skin.num}}.jpg" alt="championSplash" />
+                    <h5>{{skin.name}}</h5>
                 </div>
             </div>
         </div>
