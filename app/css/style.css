@@ -7,19 +7,19 @@ body {
 }
 
 input {
-  font-size: 18px;
+    font-size: 18px;
 }
 
 td {
-  font-size: 18px;
+    font-size: 18px;
 }
 
 #wins {
-  color: green;
+    color: green;
 }
 
 #losses {
-  color: red;
+    color: red;
 }
 
 .table-wraper {
@@ -48,12 +48,12 @@ td {
     color: darkblue;
 }
 
-#championTitle {
+#champion-title {
     font-size: 18px;
     color: skyblue;
 }
 
-#championSplash {
+#champion-splash {
     float: left;
     width: 165px;
     height: 300px;
