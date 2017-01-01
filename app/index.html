@@ -74,8 +74,8 @@
             <div class="row">
                 <div id="champion-info">
                     <img id="champion-avatar" ng-src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{champCtrl.selectedChampion.name}}_0.jpg" alt="championSplash" />
-                    <span id="championName">{{champCtrl.selectedChampion.name}}</span>
-                    <span id="championTitle"> - {{champCtrl.selectedChampion.title}}</span>
+                    <span id="champion-name">{{champCtrl.selectedChampion.name}}</span>
+                    <span id="champion-title"> - {{champCtrl.selectedChampion.title}}</span>
                     <div id="champion-tags" ng-repeat="tag in champCtrl.selectedChampion.tags">
                         <span class="tag tag-primary">{{tag}}</span>
                     </div>
@@ -84,7 +84,7 @@
             <div class="row">
                 <h1> Skins </h1>
                 <div id="skins" class="col-md-2" ng-repeat="skin in champCtrl.selectedChampion.skins">
-                    <img id="championSplash" ng-src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{champCtrl.selectedChampion.name}}_{{skin.num}}.jpg" alt="championSplash" />
+                    <img id="champion-splash" ng-src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{champCtrl.selectedChampion.name}}_{{skin.num}}.jpg" alt="champion-splash" />
                     <h5>{{skin.name}}</h5>
                 </div>
             </div>
