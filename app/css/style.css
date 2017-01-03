@@ -1,5 +1,5 @@
 body {
-    background: #EEEEEE;
+
 }
 
 .container {
@@ -36,21 +36,34 @@ td {
     height:60px;
 }
 
+.white-block {
+    padding: 20px;
+    margin-bottom: 30px;
+    background: #e9eaec;
+    background-color: transparent;
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#1A000000,endColorstr=#1A000000);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#1A000000,endColorstr=#1A000000);
+    background-color: rgba(0,0,0,0.1);
+    border-left: 1px solid rgba(84,84,84,0.3);
+    border-top: 1px solid rgba(84,84,84,0.3);
+    border-bottom: 1px solid rgba(255,255,255,0.6);
+    border-right: 1px solid rgba(255,255,255,0.6);
+}
+
+#champion-info {
+    text-transform: capitalize;
+}
+
 #champion-avatar {
     float: left;
-    padding-right: 15px;
-    width: 20%;
-    height: 20%;
 }
 
 #champion-name {
     font-size: 30px;
-    color: darkblue;
 }
 
 #champion-title {
     font-size: 18px;
-    color: skyblue;
 }
 
 #champion-splash {
@@ -59,16 +72,17 @@ td {
     height: 300px;
 }
 
-.champion-tags li {
+#champion-tags {
     display: inline-block;
     padding: 5px 8px;
     margin-right: 5px;
+    margin-top: 10px;
     margin-bottom: 5px;
     border-radius: 3px;
     background-color: #FA8072;
-    text-transform: uppercase;
     font-size: 0.875em;
     font-weight: 300;
     letter-spacing: 1px;
     color: white;
 }
+
