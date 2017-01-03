@@ -81,7 +81,7 @@
                     <div id="champion-info">
                         <div class="col-md-6 offset-md-3 white-block">
                             <div class="col-md-4">
-                                <img id="champion-avatar" ng-src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/{{champCtrl.selectedChampion.name}}.png" alt="championSplash" />
+                                <img id="champion-avatar" ng-src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/{{champCtrl.selectedChampion.key}}.png" alt="championSplash" />
                                 <div>
                                     <span class="tag tag-default" ng-repeat="tag in champCtrl.selectedChampion.tags" style="margin-right: 10px;">
                                         {{tag}}
@@ -93,8 +93,6 @@
                                     {{key}}
                                     <progress class="progress" value={{value}} max="10" style="margin-bottom: 0;"></progress>
                                 </div>
-
-
                             </div>
                         </div>
                         <!--
@@ -121,7 +119,7 @@ Attack Damage:
                 <h1> Skins </h1>
                 <div class="row white-block">
                     <div id="skins" class="col-md-2" ng-repeat="skin in champCtrl.selectedChampion.skins">
-                        <img id="champion-splash" ng-src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{champCtrl.selectedChampion.name}}_{{skin.num}}.jpg" alt="champion-splash" />
+                        <img id="champion-splash" ng-src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{champCtrl.selectedChampion.key}}_{{skin.num}}.jpg" alt="champion-splash" />
                         <h6>{{skin.name}}</h6>
                     </div>
                 </div>
