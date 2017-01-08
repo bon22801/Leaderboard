@@ -2,13 +2,13 @@
     'use strict';
 
     angular
-        .module('leaderboardApp').controller("PlayerCtrl", function ($scope, playerService) {
-        playerService.getPlayers(function (players) {
-            console.log(players);
-            $scope.players = players.entries;
+        .module('leaderboardApp').controller("PlayerCtrl", function (playerService) {
+        playerService.getPlayers((playerList) => {
+            console.log(playerList);
+            this.players = playerList.entries;
         });
 
-        $scope.orderProp = '-leaguePoints';
+        this.orderProp = '-leaguePoints';
     })
 })();
 
