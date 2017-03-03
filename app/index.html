@@ -49,7 +49,7 @@
                                 <tr ng-repeat="player in playerCtrl.players | orderBy:playerCtrl.orderProp | filter:search | limitTo:50">
                                     <td>{{$index+1}}</td>
                                     <td>
-                                        <a a href="#" ng-click="playerCtrl.showPlayerInfo(player.playerOrTeamId)">
+                                        <a a href="#" ng-click="playerCtrl.selectPlayer(player.playerOrTeamId)">
                                         {{player.playerOrTeamName}}
                                         </a>
                                     </td>
