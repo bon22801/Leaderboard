@@ -1,4 +1,4 @@
-#[Leaderboard](https://cdn.rawgit.com/bon22801/Leaderboard/master/app/index.html)#
+#[Leaderboard](https://htmlpreview.github.io/?https://github.com/yujerlin/Leaderboard/blob/master/app/index.html#)#
 A web application that builds league of Legends leaderboard in HTML, CSS, and AngularJS. Live data is fetched from [Riot game API](https://developer.riotgames.com/).
 
 
