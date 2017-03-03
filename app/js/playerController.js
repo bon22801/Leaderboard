@@ -8,6 +8,10 @@
             this.players = playerList.entries;
         });
 
+        this.showPlayerInfo = (id) => {
+            console.log(id);
+        }
+        
         this.orderProp = '-leaguePoints';
     })
 })();
