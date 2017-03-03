@@ -81,7 +81,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="champion in playerCtrl.champions">
+                        <tr ng-repeat="champion in playerCtrl.champions | orderBy:'-stats.totalChampionKills'">
                             <td ng-if="champion.id !== 0"> <img class="half-size-icon" ng-src="https://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/{{playerCtrl.championMap[champion.id]}}.png" alt="championIcon" />
                             </td>
                             <td ng-if="champion.id !== 0">{{playerCtrl.championMap[champion.id]}}</td>
