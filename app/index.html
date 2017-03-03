@@ -64,6 +64,9 @@
             </div>
             
             <div class="container" ng-show="playerCtrl.playerSelected">
+                <div class="row" style="margin-bottom: 30px">
+                    <button type="button" ng-click="playerCtrl.unselectPlayer()" class="btn btn-primary">back</button>
+                </div>
                 <table class="table table-striped">
                     <thead class="thead-inverse">
                         <tr>
@@ -79,15 +82,15 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="champion in playerCtrl.champions">
-                            <td> <img class="half-size-icon" ng-src="https://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/{{playerCtrl.championMap[champion.id]}}.png" alt="championIcon" />
+                            <td ng-if="champion.id !== 0"> <img class="half-size-icon" ng-src="https://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/{{playerCtrl.championMap[champion.id]}}.png" alt="championIcon" />
                             </td>
-                            <td>{{playerCtrl.championMap[champion.id]}}</td>
-                            <td>{{champion.stats.totalChampionKills}}</td>
-                            <td>{{champion.stats.totalDeathsPerSession}}</td>
-                            <td>{{champion.stats.totalAssists}}</td>
-                            <td>{{(champion.stats.totalChampionKills + champion.stats.totalAssists) / champion.stats.totalDeathsPerSession | number:2}} </td>
-                            <td>{{champion.stats.totalDamageDealt}}</td>
-                            <td>{{champion.stats.totalDamageTaken}}</td>
+                            <td ng-if="champion.id !== 0">{{playerCtrl.championMap[champion.id]}}</td>
+                            <td ng-if="champion.id !== 0">{{champion.stats.totalChampionKills}}</td>
+                            <td ng-if="champion.id !== 0">{{champion.stats.totalDeathsPerSession}}</td>
+                            <td ng-if="champion.id !== 0">{{champion.stats.totalAssists}}</td>
+                            <td ng-if="champion.id !== 0">{{(champion.stats.totalChampionKills + champion.stats.totalAssists) / champion.stats.totalDeathsPerSession | number:2}} </td>
+                            <td ng-if="champion.id !== 0">{{champion.stats.totalDamageDealt}}</td>
+                            <td ng-if="champion.id !== 0">{{champion.stats.totalDamageTaken}}</td>
                         </tr>
                     </tbody>
                 </table>

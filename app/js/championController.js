@@ -12,7 +12,7 @@
         
         this.buildChampionMapping = (champions) => {
             let map = {};
-            
+
             for (var prop in champions.data) {
                 let id = champions.data[prop].id;
                 let key = champions.data[prop].key;
