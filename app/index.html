@@ -20,7 +20,7 @@
         </nav>
 
         <div ng-controller="PlayerCtrl as playerCtrl" ng-show="tab.currentTab == 1">
-            <div class="container">
+            <div class="container" ng-hide="playerCtrl.playerSelected">
                 <div class="row">
                     <div class="col-md-3">
                         <h1> Leaderboard </h1>
@@ -62,6 +62,38 @@
                     </div>
                 </div>
             </div>
+            
+            <div class="container" ng-show="playerCtrl.playerSelected">
+                <table class="table table-striped">
+                    <thead class="thead-inverse">
+                        <tr>
+                            <th>Icon</th>
+                            <th>Champion</th>
+                            <th>Kills</th>
+                            <th>Deaths</th>
+                            <th>Assists</th>
+                            <th>KDA</th>
+                            <th>Damage Dealt</th>
+                            <th>Damage Taken</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="champion in playerCtrl.champions">
+                            <td> <img class="half-size-icon" ng-src="https://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/{{playerCtrl.championMap[champion.id]}}.png" alt="championIcon" />
+                            </td>
+                            <td>{{playerCtrl.championMap[champion.id]}}</td>
+                            <td>{{champion.stats.totalChampionKills}}</td>
+                            <td>{{champion.stats.totalDeathsPerSession}}</td>
+                            <td>{{champion.stats.totalAssists}}</td>
+                            <td>{{(champion.stats.totalChampionKills + champion.stats.totalAssists) / champion.stats.totalDeathsPerSession | number:2}} </td>
+                            <td>{{champion.stats.totalDamageDealt}}</td>
+                            <td>{{champion.stats.totalDamageTaken}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            
         </div>
 
         <div ng-controller="ChampionCtrl as champCtrl" ng-show="tab.currentTab == 2">
@@ -99,25 +131,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!--
-<div class="col-md-8">
-<span id="champion-name">{{champCtrl.selectedChampion.name}}</span>
-<span id="champion-title"> - {{champCtrl.selectedChampion.title}}</span>
-
-<span id="champion-tags" class="tag tag-primary" ng-repeat="tag in champCtrl.selectedChampion.tags">
-{{tag}}
-</span>
-
-<div class="col-md-6">
-Health:
-{{ champCtrl.selectedChampion.stats.hp }} (+{{champCtrl.selectedChampion.stats.hpperlevel}} per level)
-</div>
-<div class="col-md-6">
-Attack Damage:
-{{ champCtrl.selectedChampion.stats.attackdamage }}  (+{{champCtrl.selectedChampion.stats.attackdamageperlevel}} per level)
-</div>
-</div>
--->
                     </div>
                 </div>
                 <h1> Skins </h1>

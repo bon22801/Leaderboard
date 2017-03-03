@@ -11,8 +11,12 @@
             playerService.selectedPlayerId = id;
             playerService.getChampionStats((data) => {
                 console.log(data);
+                this.champions = data.champions;
+                this.championMap = championService.championMap;
                 console.log(championService.championMap[1]);
             });
+            
+            this.playerSelected = true;
         }
 
         this.orderProp = '-leaguePoints';
