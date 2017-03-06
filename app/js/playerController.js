@@ -7,8 +7,9 @@
             this.players = playerList.entries;
         });
 
-        this.selectPlayer = (id) => {
-            playerService.selectedPlayerId = id;
+        this.selectPlayer = (player) => {
+            playerService.selectedPlayerId = player.playerOrTeamId;
+            this.playerName = player.playerOrTeamName;
             playerService.getChampionStats((data) => {
                 this.champions = data.champions;
                 this.championMap = championService.championMap;
