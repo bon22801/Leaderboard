@@ -50,7 +50,7 @@
                                     <td ng-if="playerCtrl.orderProp == '-leaguePoints'">{{$index+1}}</td>
                                     <td>
                                         <a a href="#" ng-click="playerCtrl.selectPlayer(player.playerOrTeamId)">
-                                        {{player.playerOrTeamName}}
+                                            {{player.playerOrTeamName}}
                                         </a>
                                     </td>
                                     <td id="wins">{{player.wins}}</td>
@@ -62,41 +62,46 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="container" ng-show="playerCtrl.playerSelected">
-                <div class="row" style="margin-bottom: 30px">
-                    <button type="button" ng-click="playerCtrl.unselectPlayer()" class="btn btn-primary">back</button>
+                <div class="col-md-2">
+                    <div class="row" style="margin-bottom: 30px">
+                        <button type="button" ng-click="playerCtrl.unselectPlayer()" class="btn btn-primary">back</button>
+                    </div>
                 </div>
-                <table class="table table-striped">
-                    <thead class="thead-inverse">
-                        <tr>
-                            <th>Icon</th>
-                            <th>Champion</th>
-                            <th>Kills</th>
-                            <th>Deaths</th>
-                            <th>Assists</th>
-                            <th>KDA</th>
-                            <th>Damage Dealt</th>
-                            <th>Damage Taken</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="champion in playerCtrl.champions | orderBy:'-stats.totalChampionKills'">
-                            <td ng-if="champion.id !== 0"> <img class="half-size-icon" ng-src="https://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/{{playerCtrl.championMap[champion.id]}}.png" alt="championIcon" />
-                            </td>
-                            <td ng-if="champion.id !== 0">{{playerCtrl.championMap[champion.id]}}</td>
-                            <td ng-if="champion.id !== 0">{{champion.stats.totalChampionKills}}</td>
-                            <td ng-if="champion.id !== 0">{{champion.stats.totalDeathsPerSession}}</td>
-                            <td ng-if="champion.id !== 0">{{champion.stats.totalAssists}}</td>
-                            <td ng-if="champion.id !== 0">{{(champion.stats.totalChampionKills + champion.stats.totalAssists) / champion.stats.totalDeathsPerSession | number:2}} </td>
-                            <td ng-if="champion.id !== 0">{{champion.stats.totalDamageDealt}}</td>
-                            <td ng-if="champion.id !== 0">{{champion.stats.totalDamageTaken}}</td>
-                        </tr>
-                    </tbody>
-                </table>
+
+                <div class="col-md-10 table-wraper">
+                    <table class="table table-striped">
+                        <thead class="thead-inverse">
+                            <tr>
+                                <th>Icon</th>
+                                <th>Champion</th>
+                                <th>Kills</th>
+                                <th>Deaths</th>
+                                <th>Assists</th>
+                                <th>KDA</th>
+                                <th>Games Played</th>
+                                <th>Win Rate</th>
+                                <th>Played Ratio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="champion in playerCtrl.champions | orderBy:'-stats.totalSessionsPlayed'">
+                                <td ng-if="champion.id !== 0"> <img class="half-size-icon" ng-src="https://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/{{playerCtrl.championMap[champion.id]}}.png" alt="championIcon" />
+                                </td>
+                                <td ng-if="champion.id !== 0">{{playerCtrl.championMap[champion.id]}}</td>
+                                <td ng-if="champion.id !== 0">{{champion.stats.totalChampionKills}}</td>
+                                <td ng-if="champion.id !== 0">{{champion.stats.totalDeathsPerSession}}</td>
+                                <td ng-if="champion.id !== 0">{{champion.stats.totalAssists}}</td>
+                                <td ng-if="champion.id !== 0">{{(champion.stats.totalChampionKills + champion.stats.totalAssists) / champion.stats.totalDeathsPerSession | number:2}} </td>
+                                <td ng-if="champion.id !== 0">{{champion.stats.totalSessionsWon}}W/{{champion.stats.totalSessionsLost}}L</td>
+                                <td ng-if="champion.id !== 0">{{champion.stats.totalSessionsWon/champion.stats.totalSessionsPlayed*100  | number:2}}%</td>
+                                <td ng-if="champion.id !== 0">{{champion.stats.totalSessionsPlayed}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        
-            
         </div>
 
         <div ng-controller="ChampionCtrl as champCtrl" ng-show="tab.currentTab == 2">
