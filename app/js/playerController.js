@@ -9,7 +9,7 @@
 
         this.selectPlayer = (player) => {
             playerService.selectedPlayerId = player.playerOrTeamId;
-            this.playerName = player.playerOrTeamName;
+            this.player = player;
             playerService.getChampionStats((data) => {
                 this.champions = data.champions;
                 this.championMap = championService.championMap;

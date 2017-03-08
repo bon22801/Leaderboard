@@ -66,8 +66,13 @@
             <div class="container" ng-show="playerCtrl.playerSelected">
                 <div class="col-md-2">
                     <div class="row" style="margin-bottom: 30px">
+                        <h2>{{playerCtrl.player.playerOrTeamName}}</h2>
+                        <hr>
+                        <h3>{{playerCtrl.player.leaguePoints}} Points</h3>
+                        <h4 id="wins">{{playerCtrl.player.wins}} Wins</h4>
+                        <h4 id="losses">{{playerCtrl.player.losses}} Losses</h4>
+                        <hr>
                         <button type="button" ng-click="playerCtrl.unselectPlayer()" class="btn btn-primary">back</button>
-                        {{playerCtrl.playerName}}
                     </div>
                 </div>
 
@@ -96,8 +101,8 @@
                                 <td ng-if="champion.id !== 0">{{champion.stats.totalAssists}}</td>
                                 <td ng-if="champion.id !== 0">{{(champion.stats.totalChampionKills + champion.stats.totalAssists) / champion.stats.totalDeathsPerSession | number:2}} </td>
                                 <td ng-if="champion.id !== 0">{{champion.stats.totalSessionsWon}}W/{{champion.stats.totalSessionsLost}}L</td>
-                                <td ng-if="champion.id !== 0">{{champion.stats.totalSessionsWon/champion.stats.totalSessionsPlayed*100  | number:2}}%</td>
-                                <td ng-if="champion.id !== 0">{{champion.stats.totalSessionsPlayed}}</td>
+                                <td ng-if="champion.id !== 0">{{champion.stats.totalSessionsWon/champion.stats.totalSessionsPlayed*100 | number:2}}%</td>
+                                <td ng-if="champion.id !== 0">{{100*champion.stats.totalSessionsPlayed/(playerCtrl.player.wins+playerCtrl.player.losses) | number:2}}%</td>
                             </tr>
                         </tbody>
                     </table>
