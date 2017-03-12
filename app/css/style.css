@@ -43,7 +43,7 @@ td {
     background-color: transparent;
     -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#1A000000,endColorstr=#1A000000);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#1A000000,endColorstr=#1A000000);
-    background-color: rgba(0,0,0,0.1);
+    background-color: darkgray;
     border-left: 1px solid rgba(84,84,84,0.3);
     border-top: 1px solid rgba(84,84,84,0.3);
     border-bottom: 1px solid rgba(255,255,255,0.6);
